@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="panel panel-default" id="dateContainer">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-4">
+          <button mwlCalendarPreviousView [(viewDate)]="viewDate" [view]="view" class="btn btn-primary" style="float: left;">Previous Month</button>
+        </div>
+        <div class="col-md-4">
+          <h3>{{viewDate | calendarDate:(view + 'ViewTitle'):'en'}}</h3>
+        </div>
+        <div class="col-md-4">
+          <button mwlCalendarNextView [(viewDate)]="viewDate" [view]="view" class="btn btn-primary" style="float: right;">Next Month</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <mwl-calendar-month-view 
+          [viewDate]="viewDate" 
+          [activeDayIsOpen]="activeDayIsOpen"
+          [events]="events"
+          (dayClicked)="dayClicked($event.day)">
+      </mwl-calendar-month-view>
+    </div>
+  </div>
+</div>
+
+    
+

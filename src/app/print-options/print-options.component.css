@@ -1,0 +1,9 @@
+.container{
+    border: solid 2px green;
+    padding: 2%;
+}
+
+#buttons{
+    float: right;
+    margin-right: 18%;
+}

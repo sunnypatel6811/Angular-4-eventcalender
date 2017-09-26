@@ -1,0 +1,15 @@
+.panel-default{
+    margin: 5%;
+}
+
+.panel-title{
+    text-align: center;
+    font-weight: bolder;
+    color: blue;
+}
+
+#success{
+    color: green;
+    background-color: white;
+    padding: 3%;
+}

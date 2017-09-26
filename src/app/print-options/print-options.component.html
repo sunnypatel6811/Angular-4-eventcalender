@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <h2>Customize the documents you want to print</h2>
+      <div class="radio">
+        <label><input type="radio" name="printTo" value="owner" #owner >Meeting Owner - Delivery will occur one business day prior to meeting time</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="printTo" value="meetingroom" #meetingroom>Meeting Room - Delivery will occur 15 minutes before meeting time</label>
+      </div>
+      <textarea class="form-control" id="" cols="30" rows="4" #description
+      placeholder="if you have any specific instructions pertintent to your order, please entere them here..."></textarea>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>File</th>
+            <th>Print</th>
+            <th>Color</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody #tbody >
+          <tr *ngFor="let file of sendToPrint">
+            <td #fileName>{{file._file.name}}</td>
+            <td>
+              <div class="checkbox">
+                <label><input type="checkbox"  #print ></label>
+              </div>
+            </td>
+            <td>
+              <div class="checkbox">
+                <label><input type="checkbox" #color></label>
+              </div>
+            </td>
+            <td>
+              <input type="text" #notes style="width:350px;">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  <div id="buttons">
+    <button class="btn btn-success" (click)="sendingToPrintCenter()">Print</button>
+    <button class="btn btn-danger"(click)="notSendingToPrintCenter()">Cancel</button>
+  </div>
+</div>

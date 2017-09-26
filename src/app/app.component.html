@@ -1,0 +1,24 @@
+<div class="panel panel-default" *ngIf="!showsuccess">
+  <div class="panel-heading">
+    <h3 class="panel-title">PRINT-CENTER</h3>
+  </div>
+  <div class="panel-body">
+    <app-calender-holder *ngIf="!addEvent && !showprint" [sendToCalender]="sendToCalender"></app-calender-holder>
+  </div>
+  <br />
+  <button class="btn btn-primary" style="width: 100%;" (click)="onAddEvent($event)">Add Event</button>
+  <br /><br />
+  <app-event-adder 
+      *ngIf="addEvent" (showCalender)="showCalender($event)" 
+      (sendEventToCalender)="showEvent($event)"
+      (showSuccess)="showSuccessMethod($event)">
+      </app-event-adder>
+  <app-print-options [sendToPrint]="files" *ngIf="showprint" (sendSuccess)="showSuccessMethod($event)"></app-print-options>
+</div>
+
+<div class="container" id="success" *ngIf="showsuccess">
+  <div class="jumbotron">
+    <h1>Success.........</h1>
+    <button class="btn btn-default" (click)="showFirstDiv()">Click here to view events</button>
+  </div>
+</div>
